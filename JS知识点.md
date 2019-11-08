@@ -1,10 +1,13 @@
-
-## 变量提升
+# 目录
+[变量提升](#变量提升) <br>
+[数据类型](#数据类型) <br>
+[typeof 运算符](#typeof运算符) <br>
+## <a name="">变量提升</a>
 > JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行<br>
 这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升
 ---
 
-## <a name="divtop">数据类型</a>
+## <a name="数据类型">数据类型</a>
 有 Number、String、Boolean、Undefined、Null 和 Object 六个<br>
 以及 ES6 新增的 Symbol，Symbol 值是原始类型，Symbol() 构造函数是对象（暂不讨论）
 >### 原始类型/基本类型（Undefined 和 Null 比较特殊）:
@@ -18,7 +21,7 @@
 >* array
 >* function
 ---
-## typeof 运算符
+## <a name="typeof运算符">typeof 运算符</a>
 ### 语法：
 ```javascript
 /*
@@ -141,4 +144,3 @@ var a="123abc";
 >&ensp;| |&ensp;&ensp;若找到了第一个真，**则后面的不会执行**，若没找到，则取最后一个的值<br>
 ---
 
-[跳转指定位置](#divtop)
