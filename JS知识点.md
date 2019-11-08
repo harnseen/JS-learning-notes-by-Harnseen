@@ -49,7 +49,13 @@ typeof NaN === 'number'; // 尽管它是 "Not-A-Number" (非数值) 的缩写
 
 typeof (typeof 1) === 'string'; // 正如上文提到的，typeof 总是返回一个字符串
 
-typeof null === 'object'; // 这算是一个历史遗留问题。因为在 JavaScript 最初的实现中，JavaScript 中的值是由一个表示类型的标签和实际数据值表示的。对象的类型标签是 0。由于 null 代表的是空指针（大多数平台下值为 0x00），因此，null 的类型标签是 0，typeof null 也因此返回 "object"。
+typeof null === 'object'; 
+/* 这算是一个历史遗留问题。
+ * 因为在 JavaScript 最初的实现中，
+ * JavaScript 中的值是由一个表示类型的标签和实际数据值表示的。
+ * 对象的类型标签是 0。由于 null 代表的是空指针（大多数平台下值为 0x00），
+ * 因此，null 的类型标签是 0，typeof null 也因此返回 "object"。
+ */
 ```
 ```javascript
 // 除 Function 外的所有构造函数的类型都是 'object'
