@@ -6,11 +6,11 @@
 ## 数据类型
 有 Number、String、Boolean、Undefined、Null 和 Object 六个<br>
 以及 ES6 新增的 Symbol，Symbol 值是原始类型，Symbol() 构造函数是对象（暂不讨论）
->### 原始类型（3个）:
+>### 原始类型/基本类型（Undefined 和 Null 比较特殊）:
 >* number
 >* string
 >* boolean
->### 对象类型 :
+>### 对象类型/引用类型 :
 >* object
 >### object 又可以分为3个子类型 ：
 >* 狭义的 object
@@ -29,7 +29,7 @@ typeof(operand)
 ```
 ### typeof 可能的返回值:
 | 类型 | 返回值 |
-| :----: | :----: |
+| ---  | ---- |
 | Undefined | "underfined" |
 | Null | "object" |
 | Boolean |	"boolean" |
@@ -76,6 +76,11 @@ var iData = 99;
 typeof iData + ' Wisen'; // 'number Wisen'
 typeof (iData + ' Wisen'); // 'string'
 ```
+```javascript
+//对正则表达式字面量的类型判断在某些浏览器中不符合标准：
+typeof /s/ === 'function'; // Chrome 1-12 , 不符合 ECMAScript 5.1
+typeof /s/ === 'object'; // Firefox 5+ , 符合 ECMAScript 5.1
+```
 ---
 
 ## 类型转换
@@ -84,6 +89,25 @@ typeof (iData + ' Wisen'); // 'string'
 ### 隐示类型转换
 > 字符串与其他类型数据相加，其他类型数据会自动变为字符串<br>
 
+### 小练习：
+var a="123abc"; 
+1. typeof(+a) 
+7. typeof(!!a) 
+8. typeof(a+"")
+9. alert(1=="1");
+10. alert(NaN==NaN); 
+11. alert(NaN==undefined); 
+12. alert("11"+11); 
+13. alert(1==="1"); 
+14. alert(parseInt("123abc"));
+15. var num=123123.345789; <br>alert(num.toFixed(3)); 
+16. typeof(typeof(a));
+<details><summary><b>答案</b></summary>
+<p>
+
+
+</p>
+</details>
 ---
 
 ## 逻辑运算符：与或非
