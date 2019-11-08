@@ -4,8 +4,8 @@
 ---
 
 ## 数据类型
-Number、String、Boolean、Undefined、Null 和 Object<br>
-ES6新增了 Symbol，Symbol 值是原始类型，Symbol() 构造函数是对象（暂不讨论）
+有 Number、String、Boolean、Undefined、Null 和 Object 六个<br>
+以及 ES6 新增的 Symbol，Symbol 值是原始类型，Symbol() 构造函数是对象（暂不讨论）
 >### 原始类型（3个）:
 >* number
 >* string
@@ -29,9 +29,9 @@ typeof(operand)
 ```
 ### typeof 可能的返回值:
 | 类型 | 返回值 |
-| ---- | ---- |
+| :----: | :----: |
 | Undefined | "underfined" |
-| Null | "null" |
+| Null | "object" |
 | Boolean |	"boolean" |
 | Number	| "number" |
 | Symbol | "symbol" |
@@ -40,7 +40,36 @@ typeof(operand)
 | Function | "function |
 | 其它任何对象 | "object" |
 > **注意：typeof 的返回值是一个字符串**<br>
-> 例如：typeof(123) 返回的是 "number"，typeof(true) 返回的是 "boolean",它们都是字符串
+>> 例如：typeof(123) 返回的是 "number"，typeof(true) 返回的是 "boolean",它们都是字符串
+### 一些比较特殊的情况：
+```javascript
+typeof Infinity === 'number'; // Infinity属性的值为Number类型
+
+typeof NaN === 'number'; // 尽管它是 "Not-A-Number" (非数值) 的缩写
+
+typeof (typeof 1) === 'string'; // 正如上文提到的，typeof 总是返回一个字符串
+
+typeof null === 'object'; // 这算是一个历史遗留问题。因为在 JavaScript 最初的实现中，JavaScript 中的值是由一个表示类型的标签和实际数据值表示的。对象的类型标签是 0。由于 null 代表的是空指针（大多数平台下值为 0x00），因此，null 的类型标签是 0，typeof null 也因此返回 "object"。
+```
+```javascript
+// 除 Function 外的所有构造函数的类型都是 'object'
+var str = new String('String');
+var num = new Number(100);
+
+typeof str; // 返回 'object'
+typeof num; // 返回 'object'
+
+var func = new Function();
+
+typeof func; // 返回 'function'
+```
+```javascript
+// 括号有无将决定表达式的类型。
+var iData = 99;
+
+typeof iData + ' Wisen'; // 'number Wisen'
+typeof (iData + ' Wisen'); // 'string'
+```
 ---
 
 ## 类型转换
