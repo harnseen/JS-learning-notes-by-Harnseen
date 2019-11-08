@@ -1,9 +1,10 @@
+
 ## 变量提升
 > JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行<br>
 这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升
 ---
 
-## 数据类型
+## <a name="divtop">数据类型</a>
 有 Number、String、Boolean、Undefined、Null 和 Object 六个<br>
 以及 ES6 新增的 Symbol，Symbol 值是原始类型，Symbol() 构造函数是对象（暂不讨论）
 >### 原始类型/基本类型（Undefined 和 Null 比较特殊）:
@@ -81,11 +82,35 @@ typeof (iData + ' Wisen'); // 'string'
 typeof /s/ === 'function'; // Chrome 1-12 , 不符合 ECMAScript 5.1
 typeof /s/ === 'object'; // Firefox 5+ , 符合 ECMAScript 5.1
 ```
+### 原始类型的值不可变，对象的值可变
+> 这个涉及到数据结构的知识<br>
+> 任何方法都改变不了原始值，而对象类型是可以修改的<br>
+> 参考《JavaScript权威指南(第六版)》第三章的第七节：“不可变的原始值和可变的引用对象”
 ---
 
 ## 类型转换
-
-### 显示类型转换
+### 为什么 JavaScript 中会经常发生类型转换？
+> 因为 JavaScript 是弱类型语言，变量没有类型限制，可以随时赋予任意值。
+### 显示类型转换/强制转换
+#### Number( )
+> 可能会有以下四种结果：<br>
+> ***纯数字***：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
+> ***0***：false，null，''(空字符串)<br>
+> ***1***: true<br>
+> ***NaN***: undefined,对象或字符串中含有非数字的字符。
+```javascript
+// 例子
+console.log(Number("1px"));     // NaN
+console.log(Number("1"));       // 1
+console.log(Number({}));        // NaN
+console.log(Number(null));      // 0
+console.log(Number(undefined)); // NaN
+console.log(Number([]));        // 0
+console.log(Number(""));        // 0
+console.log(Number(true));      // 1
+console.log(Number(false));     // 0
+console.log(Number([5]))        // 5
+```
 ### 隐示类型转换
 > 字符串与其他类型数据相加，其他类型数据会自动变为字符串<br>
 
@@ -108,10 +133,12 @@ var a="123abc";
 
 </p>
 </details>
+
 ---
 
 ## 逻辑运算符：与或非
-> &&&ensp; 若找到了第一个假，则后面的不会执行，若没找到，则取最后一个的值<br>
->&ensp;| |&ensp;&ensp;若找到了第一个真，则后面的不会执行，若没找到，则取最后一个的值<br>
+> &&&ensp; 若找到了第一个假，**则后面的不会执行**，若没找到，则取最后一个的值<br>
+>&ensp;| |&ensp;&ensp;若找到了第一个真，**则后面的不会执行**，若没找到，则取最后一个的值<br>
 ---
 
+[跳转指定位置](#divtop)
