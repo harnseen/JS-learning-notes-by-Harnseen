@@ -31,8 +31,8 @@
  * 下面是使用 typeof 的两种方法
  * operand 为参数
  */
-typeof operand    
-typeof(operand)   
+typeof operand;   
+typeof(operand);   
 ```
 ### typeof 可能的返回值:
 | 类型 | 返回值 |
@@ -101,7 +101,7 @@ typeof /s/ === 'object'; // Firefox 5+ , 符合 ECMAScript 5.1
 #### Number( )
 > 可能会有以下四种结果：<br>
 > ***纯数字*** ：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
-> ***0*** ：&ensp;&ensp;&ensp;&ensp;&ensp;false，null，'' (空字符串)或空数组<br>
+> ***0*** ：&ensp;&ensp;&ensp;&ensp;&ensp;false，null，'' ( 空字符串 )或空数组<br>
 > ***1*** : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;true<br>
 > ***NaN*** : &ensp;&ensp;&ensp;undefined, 对象或含有非数字字符的字符串。
 ```javascript
@@ -117,6 +117,19 @@ console.log(Number(true));      // 1
 console.log(Number(false));     // 0
 console.log(Number([5]))        // 5
 ```
+#### parseInt( )
+> 用法与 Number ( ) 有些类似 <br>
+> 常用来提取字符串中的数字 <br>
+> 返回值只有两种可能：一个整数或NaN
+##### 语法 ：
+```javascript
+parseInt(string, radix);
+// string 是要被解析的值
+// radix 表示string的基数，string将以这个进制运算，它的取值为2-36。例如：radix参数为10 将会把第一个参数看作是一个数的十进制表示，8 对应八进制，16 对应十六进制，等等。基数大于 10 时，用字母表中的字母来表示大于 9 的数字。例如十六进制中，使用 A 到 F
+```
+#### parseFloat( )
+> 用法与 parseInt 相似 <br>
+> 不同的是，parseFloat 没有 radix 参数，除了可以返回整数，还能返回浮点数。
 #### String( )
 >***数值***：&ensp;&ensp;&ensp;&ensp;&ensp;转为相应的字符串。<br>
 >***字符串***：&ensp;&ensp;&ensp;转换后还是原来的值。 <br>
@@ -131,6 +144,27 @@ String(true)       // "true"
 String(undefined) // "undefined"
 String(null)     // "null"
 ```
+>String方法的参数如果是对象，返回一个类型字符串；如果是数组，返回该数组的字符串形式
+```javascript
+// 例子
+String({a: 1}) // "[object Object]"
+String([1, 2, 3]) // "1,2,3"
+```
+#### toString( )
+> toString( ) 的功能与 String( ) 很类似 <br>
+> 但有两个不同点：
+> * 语法不同
+> * 不能转换 Null 和 Undefined
+
+#### Boolean( )
+只有以下五种情况会返回 false ：
+> * undefined
+> * null
+> * 0(包含-0和+0)
+> * NaN
+> * ''（空字符串）
+
+其他的返回 true
 ### 隐示类型转换
 > 字符串与其他类型数据相加，其他类型数据会自动变为字符串<br>
 
