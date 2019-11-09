@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 目录
 [变量提升](#变量提升) <br>
 [数据类型](#数据类型) <br>
@@ -156,6 +155,14 @@ String([1, 2, 3]) // "1,2,3"
 > 但有两个不同点：
 > * 语法不同
 > * 不能转换 Null 和 Undefined
+##### 语法：
+```javascript
+thing.toString();
+
+// 当 thing 为 Number 时, 可以带 radix 参数
+thing.toString(radix);
+// 表示将 thing 转换成 radix 进制的数
+```
 
 #### Boolean( )
 只有以下五种情况会返回 false ：
