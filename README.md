@@ -5,4 +5,4 @@
 
 ---
 
-> 代码示例及部分描述来自网络（[MDN官网](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)，[阮一峰JavaScript教程](https://wangdoc.com/javascript/index.html)，《JavaScript权威指南》等等）
+> 部分代码示例及描述来自网络（[MDN官网](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)，[阮一峰JavaScript教程](https://wangdoc.com/javascript/index.html)，[《JavaScript权威指南》](https://book.douban.com/subject/2228378/)等等）

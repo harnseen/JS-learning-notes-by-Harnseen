@@ -3,6 +3,7 @@
 [数据类型](#数据类型) <br>
 [typeof 运算符](#typeof运算符) <br>
 [类型转换](#类型转换) <br>
+&ensp;&ensp;[Number( )](#Number) <br>
 [逻辑运算符：与或非](#逻辑运算符：与或非) <br>
 
 ## <a name="">变量提升</a>
@@ -98,7 +99,7 @@ typeof /s/ === 'object'; // Firefox 5+ , 符合 ECMAScript 5.1
 ### 为什么 JavaScript 中会经常发生类型转换？
 > 因为 JavaScript 是弱类型语言，变量没有类型限制，可以随时赋予任意值
 ### 显示类型转换/强制转换
-#### Number( )
+#### <a name="Number">Number( )</a>
 > 可能会有以下四种结果：<br>
 > ***纯数字*** ：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
 > ***0*** ：&ensp;&ensp;&ensp;&ensp;&ensp;false，null，'' ( 空字符串 )或空数组<br>
