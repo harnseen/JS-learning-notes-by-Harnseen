@@ -14,15 +14,15 @@
 有 Number、String、Boolean、Undefined、Null 和 Object 六个<br>
 以及 ES6 新增的 Symbol，Symbol 值是原始类型，Symbol() 构造函数是对象（暂不讨论）
 >### 原始类型/基本类型（Undefined 和 Null 比较特殊）:
->* number
->* string
->* boolean
+>* Number
+>* String
+>* Boolean
 >### 对象类型/引用类型 :
->* object
+>* Object
 >### object 又可以分为3个子类型 ：
->* 狭义的 object
->* array
->* function
+>* 狭义的 Object
+>* Array
+>* Function
 ---
 ## <a name="typeof运算符">typeof 运算符</a>
 ### 语法：
@@ -96,14 +96,14 @@ typeof /s/ === 'object'; // Firefox 5+ , 符合 ECMAScript 5.1
 
 ## <a name="类型转换">类型转换</a>
 ### 为什么 JavaScript 中会经常发生类型转换？
-> 因为 JavaScript 是弱类型语言，变量没有类型限制，可以随时赋予任意值。
+> 因为 JavaScript 是弱类型语言，变量没有类型限制，可以随时赋予任意值
 ### 显示类型转换/强制转换
 #### Number( )
 > 可能会有以下四种结果：<br>
-> ***纯数字***：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
-> ***0***：false，null，''(空字符串)<br>
-> ***1***: true<br>
-> ***NaN***: undefined,对象或字符串中含有非数字的字符。
+> ***纯数字*** ：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
+> ***0*** ：&ensp;&ensp;&ensp;&ensp;&ensp;false，null，'' (空字符串)<br>
+> ***1*** : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;true<br>
+> ***NaN*** : &ensp;&ensp;&ensp;undefined,对象或字符串中含有非数字的字符。
 ```javascript
 // 例子
 console.log(Number("1px"));     // NaN
@@ -120,7 +120,7 @@ console.log(Number([5]))        // 5
 ### 隐示类型转换
 > 字符串与其他类型数据相加，其他类型数据会自动变为字符串<br>
 
-### 小练习：
+### 小练习1：
 var a="123abc"; 
 1. typeof(+a) 
 7. typeof(!!a) 
@@ -138,6 +138,30 @@ var a="123abc";
 
 
 </p>
+</details>
+
+### 小练习2：
+1. true + false
+2. 12 / "6"
+3. "number" + 15 + 3
+4. 15 + 3 + "number"
+5. [1] > null
+6. "foo" + + "bar"
+7. "true" == true
+8. false == "false"
+9. null == ""
+10. !!"false" == !!"true"
+11. ["x"] == "x"
+12. [] + null + 1
+13. [1,2,3] == [1,2,3]
+14. {} + [] + {} + [1]
+15. ! + [] + [] + ![]
+16. new Date(0) - 0
+17. new Date(0) + 0
+<details><summary><b>答案解析</b></summary>
+
+[17道题让你彻底理解JS中的类型转换](https://www.jb51.net/article/167231.htm)
+
 </details>
 
 ---
