@@ -180,21 +180,29 @@ thing.toString(radix);
 ### 小练习1：
 var a="123abc"; 
 1. typeof(+a) 
-7. typeof(!!a) 
-8. typeof(a+"")
-9. alert(1=="1");
-10. alert(NaN==NaN); 
-11. alert(NaN==undefined); 
-12. alert("11"+11); 
-13. alert(1==="1"); 
-14. alert(parseInt("123abc"));
-15. var num=123123.345789; <br>alert(num.toFixed(3)); 
-16. typeof(typeof(a));
+2. typeof(!!a) 
+3. typeof(a+"")
+4. alert(1=="1");
+5. alert(NaN==NaN); 
+6. alert(NaN==undefined); 
+7. alert("11"+11); 
+8. alert(1==="1"); 
+9. alert(parseInt("123abc"));
+10. var num=123123.345789; <br>alert(num.toFixed(3)); 
+11. typeof(typeof(a));
 <details><summary><b>答案</b></summary>
-<p>
 
-
-</p>
+1. "number"
+2. "boolean"
+3. "string"
+4. true
+5. false
+6. false
+7. "1111"
+8. false
+9. 123
+10. 123123.346
+11. "string
 </details>
 
 ### 小练习2：
@@ -217,7 +225,18 @@ var a="123abc";
 17. new Date(0) + 0
 <details><summary><b>答案解析</b></summary>
 
-[17道题让你彻底理解JS中的类型转换](https://www.jb51.net/article/167231.htm)
+1. 1
+2. 2
+3. "number153"
+4. "18number"
+5. true
+6. 
+7. false
+8. false
+9. true
+10. true
+11. 
+详细解析：[17道题让你彻底理解JS中的类型转换](https://www.jb51.net/article/167231.htm)
 
 </details>
 
