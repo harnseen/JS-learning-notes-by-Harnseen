@@ -101,8 +101,8 @@ typeof /s/ === 'object'; // Firefox 5+ , 符合 ECMAScript 5.1
 ### 显示类型转换/强制转换
 #### <a name="Number">Number( )</a>
 > 可能会有以下四种结果：<br>
-> ***纯数字*** ：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
-> ***0*** ：&ensp;&ensp;&ensp;&ensp;&ensp;false，null，'' ( 空字符串 )或空数组<br>
+> ***能够转换的某数字*** ：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
+> ***0*** ：&ensp;&ensp;&ensp;&ensp;&ensp;false，null，"" ( 空字符串 )或空数组<br>
 > ***1*** : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;true<br>
 > ***NaN*** : &ensp;&ensp;&ensp;undefined, 对象或含有非数字字符的字符串。
 ```javascript
