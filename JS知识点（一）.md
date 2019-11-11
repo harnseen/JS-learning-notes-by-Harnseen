@@ -248,4 +248,85 @@ var a="123abc";
 ---
 
 ## 预编译
-1. 任何变量如果变量未经声明赋值，此变量就为全局对象(window)所有
+### 预编译之前
+1. **暗示全局变量**：任何变量（即使在函数中），如果未经声明就赋值，此变量就为全局对象(window)所有
+2. 一切声明的全局变量，全都是 windows 的属性
+### 预编译（预编译发生在函数执行的前一刻）
+1. 创建AO对象（Activation Object / 执行期上下文）/GO对象（GO === window）
+2. 找形参和变量声明，将形参和变量声明作为AO对象/GO对象属性名，值为undefined
+3. 将实参的值赋给形参
+4. 将函数体里的函数声明赋给函数体
+
+### 练习1
+```javascript
+function test(a, b) {
+    console.log(a); 
+    c = 0; 
+    var c; 
+    a = 3;
+    b = 2; 
+    console.log(b); 
+    function b() {} 
+    function d() {}
+    console.log(b); 
+}    
+
+test(1);
+```
+<details><summary><b>答案解析</b></summary>
+1 <br>
+2 <br>
+2 <br>
+
+### 解析
+第一步和第二步：创建AO对象，并给形参和变量赋值为undefined
+```javascript
+AO {
+    a: undefined,
+    b: undefined
+}
+```
+第三步：将实参作为值赋给形参
+```javascript
+AO {
+    a: 1,
+    b: undefined
+}
+```
+第四步：将函数体里的函数声明赋给函数体
+```javascript
+AO {
+    a: 1,
+    b: function b() {}
+}
+```
+最后再逐行执行函数
+</details>
+
+### 练习2
+```javascript
+function test(a,b) {
+    console.log(a); 
+    console.log(b); 
+    var b = 234; 
+    console.log(b); 
+    a = 123; 
+    console.log(a); 
+    function a () {}
+    var a;
+    b = 234; 
+    var b = function () {}
+    console.log(a); 
+    console.log(b); 
+}
+
+test(1);
+```
+<details><summary><b>答案解析</b></summary>
+
+function a () {} <br>
+undefined <br>
+234 <br>
+123 <br>
+123 <br>
+function () {} <br>
