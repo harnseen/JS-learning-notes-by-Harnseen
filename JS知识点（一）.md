@@ -330,3 +330,24 @@ undefined <br>
 123 <br>
 123 <br>
 function () {} <br>
+
+</details>
+
+### 练习3
+```javascript
+function a() {
+    function b() {
+        var bb=234;
+        aa = 0;
+    }
+    var aa=123;
+    b();
+    console.log(aa);
+}
+var glob=100;
+a();
+```
+<details><summary><b>答案解析</b></summary>
+
+0
+</details>
