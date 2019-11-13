@@ -101,8 +101,8 @@ typeof /s/ === 'object'; // Firefox 5+ , 符合 ECMAScript 5.1
 ### 显示类型转换/强制转换
 #### <a name="Number">Number( )</a>
 > 可能会有以下四种结果：<br>
-> ***纯数字*** ：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
-> ***0*** ：&ensp;&ensp;&ensp;&ensp;&ensp;false，null，'' ( 空字符串 )或空数组<br>
+> ***能够转换的某数字*** ：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
+> ***0*** ：&ensp;&ensp;&ensp;&ensp;&ensp;false，null，"" ( 空字符串 )或空数组<br>
 > ***1*** : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;true<br>
 > ***NaN*** : &ensp;&ensp;&ensp;undefined, 对象或含有非数字字符的字符串。
 ```javascript
@@ -330,6 +330,7 @@ undefined <br>
 123 <br>
 123 <br>
 function () {} <br>
+<<<<<<< HEAD
 
 </details>
 
@@ -381,3 +382,5 @@ console.log(z);
 函数提升后，GO里的add已经被最后一次函数声明覆盖了<br>
 （即： f  add(n) { return n = n + 3; } ）
 再执行代码时不会再看函数声明了，函数声明根本不会执行。简单来说 y 和 z 执行的都是第二次声明的函数。
+=======
+>>>>>>> 0fbfc7c48a8fd98b0d65a0e0a57bc3af7d50d9ea
