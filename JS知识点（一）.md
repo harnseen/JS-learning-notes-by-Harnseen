@@ -337,17 +337,47 @@ function () {} <br>
 ```javascript
 function a() {
     function b() {
-        var bb=234;
+        var bb = 234;
         aa = 0;
     }
-    var aa=123;
+    var aa = 123;
     b();
     console.log(aa);
 }
-var glob=100;
+var glob = 100;
 a();
 ```
 <details><summary><b>答案解析</b></summary>
 
 0
 </details>
+
+### 练习4
+```javascript
+var x = 1, y = z = 0; 
+
+function add(n) {
+    return n = n + 1;
+}
+
+y = add(x); 
+
+function add(n){
+    return n = n + 3; 
+}
+z = add(x);
+
+console.log(x);
+console.log(y);
+console.log(z);
+```
+<details><summary><b>答案解析</b></summary>
+
+1 <br>
+4 <br>
+4 <br>
+
+解析： <br>
+函数提升后，GO里的add已经被最后一次函数声明覆盖了<br>
+（即： f  add(n) { return n = n + 3; } ）
+再执行代码时不会再看函数声明了，函数声明根本不会执行。简单来说 y 和 z 执行的都是第二次声明的函数。
