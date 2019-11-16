@@ -230,7 +230,7 @@ var a="123abc";
 3. "number153"
 4. "18number"
 5. true
-6. 
+6. "fooNaN"
 7. false
 8. false
 9. true
@@ -252,7 +252,7 @@ var a="123abc";
 1. **暗示全局变量**：任何变量（即使在函数中），如果未经声明就赋值，此变量就为全局对象(window)所有
 2. 一切声明的全局变量，全都是 windows 的属性
 ### 预编译（预编译发生在函数执行的前一刻）
-1. 创建AO对象（Activation Object / 执行期上下文）/GO对象（GO === window）
+1. 创建AO对象（Activation Object / 执行上下文）/GO对象（GO === window）
 2. 找形参和变量声明，将形参和变量声明作为AO对象/GO对象属性名，值为undefined
 3. 将实参的值赋给形参
 4. 将函数体里的函数声明赋给函数体
