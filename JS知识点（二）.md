@@ -4,13 +4,36 @@
 
 推荐文章：[深入理解javascript原型和闭包](https://www.cnblogs.com/wangfupeng1988/p/4001284.html)
 
+### 练习1：
+```javascript
+var bar = { a:"002" }; 
+
+function print() {
+    bar.a = 'a'; 
+    Object.prototype.b = 'b'; 
+    return function inner() {
+        console.log(bar.a); 
+        console.log(bar.b); 
+    }
+}
+
+print()();
+```
+
+<details><summary><b>答案</b></summary>
+
+a <br>
+b
+</details>
+
+---
 ## this
 > 1. 函数预编译过程 this --> window
 > 2. 全局作用域里 this --> window
 > 3. call/apply 可以改变函数运行时 this 指向
 > 4. 谁调用方法，this 就指向谁
 
-练习：
+### 练习1：
 ```javascript
 var name = "222";
 var a = {
@@ -53,3 +76,45 @@ b.say();
 ```
 </details>
 
+### 练习2：
+```javascript
+var foo = 123; 
+
+function print(){
+    var foo = 456;
+    this.foo = 234; 
+    console.log(foo);
+    console.log(this);
+}
+
+print();
+```
+<details><summary><b>答案</b></summary>
+
+456 <br>
+window
+
+</details>
+
+### 练习3：
+```javascript
+var a = 5; 
+
+function test(){
+    a=0; 
+    console.log(a); 
+    console.log(this.a);
+    var a;
+    console.log(a);
+}
+
+new test();
+```
+<details><summary><b>答案</b></summary>
+
+0 <br>
+undefined <br>
+0
+
+解析：使用 new 后，产生一个新对象，this 里没有 a
+</details>
