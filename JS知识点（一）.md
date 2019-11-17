@@ -93,6 +93,30 @@ typeof /s/ === 'object'; // Firefox 5+ , 符合 ECMAScript 5.1
 > 这个涉及到数据结构的知识<br>
 > 任何方法都改变不了原始值，而对象类型是可以修改的<br>
 > 参考《JavaScript权威指南(第六版)》第三章的第七节：“不可变的原始值和可变的引用对象”
+
+> **当两个引用值相比较，比较的是地址**
+---
+
+## 逗号操作符
+> 对它的每个操作数求值（从左到右），并返回最后一个操作数的值。
+
+### 练习
+```javascript
+var f = (
+    function f() {
+        return "1";
+    },
+    function g() {
+        return 2;
+    }
+)();
+
+typeof f;
+```
+<details><summary><b>答案</b></summary>
+
+"number"
+
 ---
 
 ## <a name="类型转换">类型转换</a>

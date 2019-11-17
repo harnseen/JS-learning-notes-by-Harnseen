@@ -3,3 +3,53 @@
 > 每个对象都有一个__proto__ （隐式原型），这是一个隐藏的属性
 
 推荐文章：[深入理解javascript原型和闭包](https://www.cnblogs.com/wangfupeng1988/p/4001284.html)
+
+## this
+> 1. 函数预编译过程 this --> window
+> 2. 全局作用域里 this --> window
+> 3. call/apply 可以改变函数运行时 this 指向
+> 4. 谁调用方法，this 就指向谁
+
+练习：
+```javascript
+var name = "222";
+var a = {
+    name: "111",
+    say: function () {
+        console.log(this.name);
+    }
+}
+var fun = a.say;
+fun();
+a.say();
+var b = {
+    name: "333",
+    say: function (fun) {
+        fun();
+    }
+}
+b.say(a.say);
+b.say = a.say;
+b.say();
+```
+
+<details><summary><b>答案</b></summary>
+
+```javascript
+222 /* 相当于执行: 
+    *  function fun() {
+    *      console.log(this.name)
+    *  }
+    *  fun() 的 this 指向 window
+    */
+
+111 // 对象 a 调用的 say 方法，则 this 指向 a
+
+222 /* 对象 b 里的 say方法中的 fun()并没有被谁调用
+    *  所以 this 还是指向 window
+    */
+
+333 // this 指向 b
+```
+</details>
+
