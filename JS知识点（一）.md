@@ -117,6 +117,8 @@ typeof f;
 
 "number"
 
+</details>
+
 ---
 
 ## <a name="类型转换">类型转换</a>
@@ -279,7 +281,8 @@ var a="123abc";
 1. 创建AO对象（Activation Object / 执行上下文）/GO对象（GO === window）
 2. 找形参和变量声明，将形参和变量声明作为AO对象/GO对象属性名，值为undefined
 3. 将实参的值赋给形参
-4. 将函数体里的函数声明赋给函数体
+4. 给 this 赋值，默认是 window
+5. 将函数体里的函数声明赋给函数体
 
 ### 练习1
 ```javascript
@@ -302,7 +305,7 @@ test(1);
 2 <br>
 2 <br>
 
-### 解析
+### 解析:
 第一步和第二步：创建AO对象，并给形参和变量赋值为undefined
 ```javascript
 AO {
@@ -406,3 +409,5 @@ console.log(z);
 函数提升后，GO里的add已经被最后一次函数声明覆盖了<br>
 （即： f  add(n) { return n = n + 3; } ）
 再执行代码时不会再看函数声明了，函数声明根本不会执行。简单来说 y 和 z 执行的都是第二次声明的函数。
+
+</details>
