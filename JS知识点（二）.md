@@ -32,6 +32,7 @@ b
 > 2. 全局作用域里 this --> window
 > 3. call/apply 可以改变函数运行时 this 指向
 > 4. 谁调用方法，this 就指向谁
+> 5. 定时器里调用，this 指向 window
 
 ### 练习1：
 ```javascript
