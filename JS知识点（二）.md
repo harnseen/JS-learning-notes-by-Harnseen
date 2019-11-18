@@ -118,3 +118,9 @@ undefined <br>
 
 解析：使用 new 后，产生一个新对象，this 里没有 a
 </details>
+
+---
+
+## js 运行机制 -- 异步
+![](./static/img/异步1.png)
+![](./static/img/异步2.png)
