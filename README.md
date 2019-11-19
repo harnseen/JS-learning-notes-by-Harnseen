@@ -1,8 +1,10 @@
 # JS-learning-notes-by-Harnseen
 一个小萌新的JS自学笔记
 
-[JS学习笔记（一）](./JS知识点（一）.md) <br>
-[JS学习笔记（二）](./JS知识点（二）.md)
+[ECMA知识点（一）](./ECMA知识点（一）.md) <br>
+[ECMA知识点（二）](./ECMA知识点（二）.md)
+<br>
+[DOM知识点（一）](./DOM知识点（一）.md)
 
 ---
 
