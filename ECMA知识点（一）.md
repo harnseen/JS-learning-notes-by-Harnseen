@@ -6,7 +6,7 @@
 &ensp;&ensp;[Number( )](#Number) <br>
 [逻辑运算符：与或非](#逻辑运算符：与或非) <br>
 
-## <a name="">变量提升</a>
+## <a name="变量提升">变量提升</a>
 > JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行<br>
 这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升
 ---
@@ -127,10 +127,10 @@ typeof f;
 ### 显示类型转换/强制转换
 #### <a name="Number">Number( )</a>
 > 可能会有以下四种结果：<br>
-> ***能够转换的某数字*** ：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
-> ***0*** ：&ensp;&ensp;&ensp;&ensp;&ensp;false，null，"" ( 空字符串 )或空数组<br>
-> ***1*** : &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;true<br>
-> ***NaN*** : &ensp;&ensp;&ensp;undefined, 对象或含有非数字字符的字符串。
+> ***能够转换数字*** ：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
+> ***0*** ：false，null，"" ( 空字符串 )或空数组<br>
+> ***1*** : true<br>
+> ***NaN*** : undefined, 对象或含有非数字字符的字符串。
 ```javascript
 // 例子
 console.log(Number("1px"));     // NaN
@@ -152,7 +152,9 @@ console.log(Number([5]))        // 5
 ```javascript
 parseInt(string, radix);
 // string 是要被解析的值
-// radix 表示string的基数，string将以这个进制运算，它的取值为2-36，可以省略。例如：radix参数为10 将会把第一个参数看作是一个数的十进制表示，8 对应八进制，16 对应十六进制，等等。基数大于 10 时，用字母表中的字母来表示大于 9 的数字。例如十六进制中，使用 A 到 F
+// radix 表示string的基数
+// string 将以这个进制运算，它的取值为2-36，可以省略。
+// 例如：radix参数为10 将会把第一个参数看作是一个数的十进制表示，8 对应八进制，16 对应十六进制，等等。基数大于 10 时，用字母表中的字母来表示大于 9 的数字。例如十六进制中，使用 A 到 F
 ```
 #### parseFloat( )
 > 用法与 parseInt 相似 <br>
@@ -177,10 +179,11 @@ String(null)     // "null"
 String({a: 1}) // "[object Object]"
 String([1, 2, 3]) // "1,2,3"
 ```
+> String( )、toString( ) 与 typeof 方法相同的地方在于，它们返回的都是一个字符串
 #### toString( )
 > toString( ) 的功能与 String( ) 很类似 <br>
 > 但有两个不同点：
-> * 语法不同
+> * 语法不同 <br> 1. 一个是 thing.toString() ，另一个是 String(thing) <br> 2. toString( ) 可以传参 
 > * 不能转换 Null 和 Undefined
 ##### 语法：
 ```javascript
@@ -197,11 +200,16 @@ thing.toString(radix);
 > * null
 > * 0(包含-0和+0)
 > * NaN
-> * ''（空字符串）
+> * ""（空字符串）
 
 其他的返回 true
 ### 隐示类型转换
-> 字符串与其他类型数据相加，其他类型数据会自动变为字符串<br>
+>1. 转换成string：字符串与其他类型数据相加( + )时，其他类型数据会自动变为字符串, 即连接，其他情况则会自动转换为 number 类型
+>2. 转换成number：++/--(自增自减运算符) + - * / %(算术运算符) > < >= <= == != === !=== (关系运算符)
+>3. 转成boolean类型：!（逻辑非运算符）
+>4. 字符串比较大小，比较的是ASCII码，一个数一个数地比较，或一个字母一个字母地比较
+>5. 对于对象和数组：<br>1.先使用valueOf()方法获取其原始值，如果原始值不是number类型，则使用 toString()方法转成string <br>2.再将string转成number运算
+>6. 特殊情况：<br>1. null == undefined <br> null 不等于任何值除了 null 和 undefined <br>2. NaN != NaN <br> NaN 不等于任何值，包括 NaN 本身
 
 ### 小练习1：
 var a="123abc"; 
@@ -218,17 +226,21 @@ var a="123abc";
 11. typeof(typeof(a));
 <details><summary><b>答案</b></summary>
 
-1. "number"
-2. "boolean"
-3. "string"
-4. true
-5. false
+```javascript
+1. "number" // +a ==> NaN ==> number
+2. "boolean" // !! 相当于 Boolean()
+3. "string" // 连接运算符
+4. true  // "1" ==> 1
+5. false  // 特殊情况 NaN 不与任何东西相等，包括自己
 6. false
-7. "1111"
-8. false
-9. 123
-10. 123123.346
-11. "string
+7. "1111" // 连接
+8. false // 一致运算符不会进行类型转换，
+         //仅当操作数严格相等时返回true
+9. 123   // 提取字符串开头整形数字
+10. 123123.346 // 四舍五入保留3位
+11. "string"  // typeof 方法返回字符串
+```
+
 </details>
 
 ### 小练习2：
@@ -251,6 +263,7 @@ var a="123abc";
 17. new Date(0) + 0
 <details><summary><b>答案解析</b></summary>
 
+```javascript
 1. 1
 2. 2
 3. "number153"
@@ -259,10 +272,17 @@ var a="123abc";
 6. "fooNaN"
 7. false
 8. false
-9. true
+9. false
 10. true
-11. 
-详细解析：[17道题让你彻底理解JS中的类型转换](https://www.jb51.net/article/167231.htm)
+11. true
+12. "null1"
+13. false
+14. "0[object Object]1"
+15. 'truefalse'
+16. 0
+17. Thu Jan 01 1970 08:00:00 GMT+0800 (中国标准时间)0"
+```
+答案详细解析：[17道题让你彻底理解JS中的类型转换](https://www.jb51.net/article/167231.htm)
 
 </details>
 
@@ -273,6 +293,8 @@ var a="123abc";
 >&ensp;| |&ensp;&ensp;若找到了第一个真，**则后面的不会执行**，若没找到，则取最后一个的值<br>
 ---
 
+## 内置对象
+---
 ## 执行上下文 / 预编译
 ### 预编译之前
 1. **暗示全局变量**：任何变量（即使在函数中），如果未经声明就赋值，此变量就为全局对象(window)所有
