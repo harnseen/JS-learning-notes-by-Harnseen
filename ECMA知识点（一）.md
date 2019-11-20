@@ -1,10 +1,15 @@
 # 目录
 [变量提升](#变量提升) <br>
 [数据类型](#数据类型) <br>
-[typeof 运算符](#typeof运算符) <br>
+&ensp;&ensp;[string,number,boolean,null,undefined,object](#数据类型) <br>
+[常见操作符 / 运算符](#运算符) <br>
+&ensp;&ensp;[typeof 运算符](#typeof运算符) <br>
+&ensp;&ensp;[逗号操作符](#逗号操作符) <br>
+&ensp;&ensp;[逻辑运算符：与或非](#逻辑运算符：与或非) <br>
 [类型转换](#类型转换) <br>
-&ensp;&ensp;[Number( )](#Number) <br>
-[逻辑运算符：与或非](#逻辑运算符：与或非) <br>
+&ensp;&ensp;[显示类型转换](#显示类型转换) <br>
+&ensp;&ensp;[隐示类型转换](#隐示类型转换) <br>
+
 
 ## <a name="变量提升">变量提升</a>
 > JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行<br>
@@ -25,8 +30,9 @@
 >* Array
 >* Function
 ---
-## <a name="typeof运算符">typeof 运算符</a>
-### 语法：
+## <a name="运算符">常见操作符 / 运算符</a>
+### <a name="typeof运算符">typeof 运算符</a>
+#### 语法：
 ```javascript
 /*
  * 下面是使用 typeof 的两种方法
@@ -35,7 +41,7 @@
 typeof operand;   
 typeof(operand);   
 ```
-### typeof 可能的返回值:
+#### typeof 可能的返回值:
 | 类型 | 返回值 |
 | ---  | ---- |
 | Undefined | "underfined" |
@@ -49,7 +55,7 @@ typeof(operand);
 | 其它任何对象 | "object" |
 > **注意：typeof 的返回值是一个字符串**<br>
 >> 例如：typeof(123) 返回的是 "number"，typeof(true) 返回的是 "boolean",它们都是字符串
-### 一些比较特殊的情况：
+#### 一些比较特殊的情况：
 ```javascript
 typeof Infinity === 'number'; // Infinity属性的值为Number类型
 
@@ -89,18 +95,21 @@ typeof (iData + ' Wisen'); // 'string'
 typeof /s/ === 'function'; // Chrome 1-12 , 不符合 ECMAScript 5.1
 typeof /s/ === 'object'; // Firefox 5+ , 符合 ECMAScript 5.1
 ```
-### 原始类型的值不可变，对象的值可变
+#### 原始类型的值不可变，对象的值可变
 > 这个涉及到数据结构的知识<br>
 > 任何方法都改变不了原始值，而对象类型是可以修改的<br>
 > 参考《JavaScript权威指南(第六版)》第三章的第七节：“不可变的原始值和可变的引用对象”
 
 > **当两个引用值相比较，比较的是地址**
 ---
-
-## 逗号操作符
+### <a name="逻辑运算符：与或非">逻辑运算符：与或非</a>
+> &&&ensp; 若找到了第一个假，**则后面的不会执行**，若没找到，则取最后一个的值<br>
+>&ensp;| |&ensp;&ensp;若找到了第一个真，**则后面的不会执行**，若没找到，则取最后一个的值<br>
+---
+### <a name = "逗号操作符">逗号操作符</a>
 > 对它的每个操作数求值（从左到右），并返回最后一个操作数的值。
 
-### 练习
+#### 练习
 ```javascript
 var f = (
     function f() {
@@ -124,8 +133,8 @@ typeof f;
 ## <a name="类型转换">类型转换</a>
 ### 为什么 JavaScript 中会经常发生类型转换？
 > 因为 JavaScript 是弱类型语言，变量没有类型限制，可以随时赋予任意值
-### 显示类型转换/强制转换
-#### <a name="Number">Number( )</a>
+### <a name="显示类型转换">显示类型转换/强制转换</a>
+#### Number( )
 > 可能会有以下四种结果：<br>
 > ***能够转换数字*** ：当参数为字符串，且字符串里的内容为纯数字，或当参数为只包含单个纯数字的数组，则返回这个纯数字 <br>
 > ***0*** ：false，null，"" ( 空字符串 )或空数组<br>
@@ -203,7 +212,7 @@ thing.toString(radix);
 > * ""（空字符串）
 
 其他的返回 true
-### 隐示类型转换
+### <a name="隐示类型转换">隐示类型转换</a>
 >1. 转换成string：字符串与其他类型数据相加( + )时，其他类型数据会自动变为字符串, 即连接，其他情况则会自动转换为 number 类型
 >2. 转换成number：++/--(自增自减运算符) + - * / %(算术运算符) > < >= <= == != === !=== (关系运算符)
 >3. 转成boolean类型：!（逻辑非运算符）
@@ -288,148 +297,7 @@ var a="123abc";
 
 ---
 
-## <a name="逻辑运算符：与或非">逻辑运算符：与或非</a>
-> &&&ensp; 若找到了第一个假，**则后面的不会执行**，若没找到，则取最后一个的值<br>
->&ensp;| |&ensp;&ensp;若找到了第一个真，**则后面的不会执行**，若没找到，则取最后一个的值<br>
----
+
 
 ## 内置对象
 ---
-## 执行上下文 / 预编译
-### 预编译之前
-1. **暗示全局变量**：任何变量（即使在函数中），如果未经声明就赋值，此变量就为全局对象(window)所有
-2. 一切声明的全局变量，全都是 windows 的属性
-### 预编译（发生在函数执行的前一刻）
-1. 创建AO对象（Activation Object / 执行上下文）/GO对象（GO === window）
-2. 找形参和变量声明，将形参和变量声明作为AO对象/GO对象属性名，值为undefined
-3. 将实参的值赋给形参
-4. 给 this 赋值，默认是 window
-5. 将函数体里的函数声明赋给函数体
-
-### 练习1
-```javascript
-function test(a, b) {
-    console.log(a); 
-    c = 0; 
-    var c; 
-    a = 3;
-    b = 2; 
-    console.log(b); 
-    function b() {} 
-    function d() {}
-    console.log(b); 
-}    
-
-test(1);
-```
-<details><summary><b>答案解析</b></summary>
-1 <br>
-2 <br>
-2 <br>
-
-### 解析:
-第一步和第二步：创建AO对象，并给形参和变量赋值为undefined
-```javascript
-AO {
-    a: undefined,
-    b: undefined
-}
-```
-第三步：将实参作为值赋给形参
-```javascript
-AO {
-    a: 1,
-    b: undefined
-}
-```
-第四步：将函数体里的函数声明赋给函数体
-```javascript
-AO {
-    a: 1,
-    b: function b() {}
-}
-```
-最后再逐行执行函数
-</details>
-
-### 练习2
-```javascript
-function test(a,b) {
-    console.log(a); 
-    console.log(b); 
-    var b = 234; 
-    console.log(b); 
-    a = 123; 
-    console.log(a); 
-    function a () {}
-    var a;
-    b = 234; 
-    var b = function () {}
-    console.log(a); 
-    console.log(b); 
-}
-
-test(1);
-```
-<details><summary><b>答案解析</b></summary>
-
-function a () {} <br>
-undefined <br>
-234 <br>
-123 <br>
-123 <br>
-function () {} <br>
-<<<<<<< HEAD
-
-</details>
-
-### 练习3
-```javascript
-function a() {
-    function b() {
-        var bb = 234;
-        aa = 0;
-    }
-    var aa = 123;
-    b();
-    console.log(aa);
-}
-var glob = 100;
-a();
-```
-<details><summary><b>答案解析</b></summary>
-
-0
-</details>
-
-### 练习4
-```javascript
-var x = 1, y = z = 0; 
-
-function add(n) {
-    return n = n + 1;
-}
-
-y = add(x); 
-
-function add(n){
-    return n = n + 3; 
-}
-z = add(x);
-
-console.log(x);
-console.log(y);
-console.log(z);
-```
-<details><summary><b>答案解析</b></summary>
-
-1 <br>
-4 <br>
-4 <br>
-
-解析： <br>
-函数提升后，GO里的add已经被最后一次函数声明覆盖了<br>
-（即： f  add(n) { return n = n + 3; } ）
-再执行代码时不会再看函数声明了，函数声明根本不会执行。简单来说 y 和 z 执行的都是第二次声明的函数。
-
-</details>
