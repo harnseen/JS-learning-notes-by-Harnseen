@@ -259,6 +259,27 @@ undefined <br>
 解析：使用 new 后，产生一个新对象，this 里没有 a
 </details>
 
+### 练习4：
+```javascript
+var length = 10;
+function fn() {
+console.log(this.length);
+}
+
+var obj = {
+length: 5,
+method: function(fn) {
+    fn();
+    console.log(arguments.length);
+}
+};
+
+obj.method(fn, 1);
+```
+<details><summary><b>答案</b></summary>
+
+10 <br> 2
+</details>
 ---
 
 ## js 运行机制 -- 异步
@@ -274,3 +295,5 @@ undefined <br>
 ## 伪数组
 
 ## 正则表达式
+
+## instanceof
