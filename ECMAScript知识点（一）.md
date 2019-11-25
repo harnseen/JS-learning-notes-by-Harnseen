@@ -312,13 +312,43 @@ console.log(arr.length); // 3
 >往数组结尾添加一个或多个数组元素，并返回新长度
 
 **unshift( ):**
->往数组结尾添加一个或多个数组元素，并返回新长度
+>往数组前面添加一个或多个数组元素，并返回新长度
 
 **pop( ):**
->删除数组最后一个元素，并返回被删除的元素（相当于剪切）<br> 如果数组为空则返回undefined
+>删除数组最后一个元素，并返回被删除的元素（相当于剪切）<br> 
+如果数组为空则返回 undefined
 
 **shift( ):** 
->删除数组第一个元素，并返回被删除的元素（相当于剪切）<br>如果数组为空则返回undefined
+>删除数组第一个元素，并返回被删除的元素（相当于剪切）<br>
+如果数组为空则返回 undefined
+
+**slice( ):**
+>从已有的数组中返回选定的元素，不会改变原数组 <br> 
+语法：slice(start, end), start 是必须的，end 是可选的 <br> 
+返回一个新的数组，包含从 start 到 end（不包括该元素）, 参数可为负数。
+
+**splice( ):**
+>添加/删除元素，会改变原数组 <br>
+返回删除的元素，如果只是添加元素，则会返回空数组 <br>
+语法：splice( index, howmany, item ) <br>
+其中，index 和 howmany 是必须的，item 是可选的 <br>
+howmany 表示删除元素的个数，0 则表示不删除 <br>
+item 要增加的元素 <br>
+splice 方法可以在删除元素的同时增加元素
+
+**concat( ):**
+>连接多个数组，不会改变原数组
+
+**indexOf( ):**
+>返回某个指定的字符串值在字符串中首次出现的位置 <br>
+语法：indexOf ( searchvalue, fromindex) <br>
+searchvalue 是必须的，表示需要检索的元素,若没有则返回-1
+<br>
+
+**join( ):**
+>将数组转换成字符串 <br>
+默认是 , (逗号)
+也可以是其他的，如空字符串，-，·
 
 
 [数组10个方法](https://blog.csdn.net/e7SFd9w7T0c1W/article/details/78863489)

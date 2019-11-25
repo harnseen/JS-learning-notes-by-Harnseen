@@ -8,4 +8,9 @@
 
 ---
 
-> 部分描述及代码示例来自网络（ [MDN官网](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)，[阮一峰JavaScript教程](https://wangdoc.com/javascript/index.html)，[《JavaScript权威指南》](https://book.douban.com/subject/2228378/)，[渡一教育_权威「JavaScript/JS」零基础入门精英课](https://www.bilibili.com/video/av57100756) 以及全网各种博客等等 ）
+> 部分描述及代码示例来自网络（ <br>
+[MDN官网](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)<br>
+[阮一峰JavaScript教程](https://wangdoc.com/javascript/index.html)<br>
+[《JavaScript权威指南》](https://book.douban.com/subject/2228378/)<br>
+[渡一教育_权威「JavaScript/JS」零基础入门精英课](https://www.bilibili.com/video/av57100756) <br>
+以及全网各种博客等等 ）
