@@ -5,6 +5,7 @@
 [**常见操作符 / 运算符**](#运算符) <br>
 &ensp;&ensp;[typeof 运算符](#typeof运算符) <br>
 &ensp;&ensp;[逻辑运算符：与或非](#逻辑运算符：与或非) <br>
+&ensp;&ensp;[in 运算符](#in运算符) <br>
 &ensp;&ensp;[逗号操作符](#逗号操作符) <br>
 [**类型转换**](#类型转换) <br>
 &ensp;&ensp;[显示类型转换](#显示类型转换) <br>
@@ -108,6 +109,28 @@ typeof /s/ === 'object'; // Firefox 5+ , 符合 ECMAScript 5.1
 >&ensp;| |&ensp;&ensp;若找到了第一个真，**则后面的不会执行**，若没找到，则取最后一个的值<br>
 
 >与( && )的优先级高于或( || )
+---
+### <a name="in运算符">in运算符</a>
+语法
+>prop in object <br>
+如果指定的属性在指定的对象或其原型链中，则in 运算符返回true
+
+```javascript
+//对于数组
+var arr = ["redwood", "bay", "cedar", "oak", "maple"];
+
+"redwood" in arr // false
+1 in arr // true,(必须使用索引号,而不是数组元素的值)
+5 in arr // false
+length in arr // true
+```
+```javascript
+//对于对象
+var mycar = {make: "Honda", model: "Accord", year: 1998};
+"make" in mycar  // true
+"model" in mycar // true
+"Honda" in mycar // false
+```
 ---
 ### <a name = "逗号操作符">逗号操作符</a>
 > 对它的每个操作数求值（从左到右），并返回最后一个操作数的值。
