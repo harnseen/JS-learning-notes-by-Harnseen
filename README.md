@@ -2,9 +2,9 @@
 一个小萌新的JS自学笔记
 
 [ECMAScript知识点（一）](./ECMAScript知识点（一）.md) <br>
-[ECMAScript知识点（二）](./ECMAScript知识点（二）.md)
-<br>
-[DOM知识点（一）](./DOM知识点（一）.md)
+[ECMAScript知识点（二）](./ECMAScript知识点（二）.md) <br>
+[DOM知识点（一）](./DOM知识点（一）.md) <br>
+[ES6知识点（一）](./ES6知识点（一）.md)
 
 ---
 
