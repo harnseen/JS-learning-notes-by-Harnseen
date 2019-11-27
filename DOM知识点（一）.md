@@ -73,15 +73,57 @@ div.detachEvent('onclick', handler);
 2. **处于目标元素阶段**：从事件传入到目标元素之初，到未接收事件之末的过程。
 3. **冒泡阶段**：从事件接受处理触发之初，到事件递交document节点之末的过程，途中接受事件。
 
-<details><summary><b>详细过程</b></summary>
+<details><summary><b>详细过程(点我)</b></summary>
 
 ![](./static/img/eventflow.svg)
+</details>
 
 #### 事件的冒泡与捕获
 >addEventListener( )方法，可以传入三个参数，前两个是必须的，第三个是一个可选的布尔类型的数 <br>
 默认是 false，指定事件发生在冒泡阶段 <br> true 指定事件发生在捕获阶段
 
-![事件的捕获和冒泡](./static/img/事件的捕获和冒泡.png)
+##### 常见不冒泡事件
++ blur 
++ focus
++ load
++ unload
++ mouseenter
++ mouseleave
+
+<details><summary>详细版(点我)</summary>
+  
+|    Event Type     |   Bubbling phase |
+|  -------------    |  :-------------: |
+|abort	            |         ✗        | 
+|beforeinput	    |         ✔        | 
+|blur	            |         ✗        | 
+|click	            |         ✔        | 
+|compositionstart   |	      ✔        | 
+|compositionupdate  |	      ✔        | 
+|compositionend	    |         ✔        | 
+|dblclick	        |         ✔        | 
+|error	            |         ✗        |
+|focus	            |         ✗        |
+|focusin	        |         ✔        |
+|focusout           |         ✔        |
+|input	            |         ✔        |
+|keydown	        |         ✔        |
+|keyup	            |         ✔        |
+|load	            |         ✗        |
+|mousedown	        |         ✔        |
+|mouseenter	        |         ✗        |
+|mouseleave	        |         ✗        |
+|mousemove	        |         ✔        |
+|mouseout	        |         ✔        |
+|mouseover	        |         ✔        |
+|mouseup	        |         ✔        |
+|resize	            |         ✗        |
+|scroll	            |         ✔        |
+|select	            |         ✔        |
+|unload	            |         ✗        |
+|wheel	            |         ✔        |
+
+</details>
 
 #### 事件代理 / 事件委托
 例子：
