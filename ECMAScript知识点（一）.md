@@ -225,8 +225,8 @@ String([1, 2, 3]) // "1,2,3"
 thing.toString();
 
 // 当 thing 为 Number 时, 可以带 radix 参数
-thing.toString(radix);
-// 表示将 thing 转换成 radix 进制的数
+number.toString(radix);
+// 表示将 number 转换成 radix 进制的数
 ```
 
 #### Boolean( )
@@ -244,9 +244,26 @@ thing.toString(radix);
 >3. 转成boolean类型：!（逻辑非运算符）
 >4. 字符串比较大小，比较的是ASCII码，一个数一个数地比较，或一个字母一个字母地比较
 >5. 对于对象和数组：<br>1.先使用valueOf()方法获取其原始值，如果原始值不是number类型，则使用 toString()方法转成string <br>2.再将string转成number运算
->6. 特殊情况：<br>1. null == undefined <br> null 不等于任何值除了 null 和 undefined <br>2. NaN != NaN <br> NaN 不等于任何值，包括 NaN 本身
+>6. 特殊情况：<br>1. null == undefined <br> null 不等于任何值，除了 null 和 undefined <br>2. NaN != NaN <br> NaN 不等于任何值，包括 NaN 本身
 
 ### 小练习1：
+```javascript
+const a = {}
+const b = { key: 'b' }
+const c = { key: 'c' }
+
+a[b] = 123
+a[c] = 456
+
+console.log(a[b])
+```
+<details><summary><b>答案</b></summary>
+456
+
+b 和 c 是对象，在引用时会隐示转换为字符串，即 "[object, Object]"
+</details>
+
+### 小练习2：
 var a="123abc"; 
 1. typeof(+a) 
 2. typeof(!!a) 
@@ -278,7 +295,7 @@ var a="123abc";
 
 </details>
 
-### 小练习2：
+### 小练习3：
 1. true + false
 2. 12 / "6"
 3. "number" + 15 + 3
