@@ -110,7 +110,7 @@ typeof /s/ === 'object'; // Firefox 5+ , 符合 ECMAScript 5.1
 
 >与( && )的优先级高于或( || )
 ---
-### <a name="in运算符">in运算符</a>
+### <a name="in运算符">in 运算符</a>
 语法
 >prop in object <br>
 如果指定的属性在指定的对象或其原型链中，则in 运算符返回true
