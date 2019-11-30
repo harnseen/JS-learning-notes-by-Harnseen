@@ -298,5 +298,15 @@ obj.method(fn, 1);
 
 ## instanceof
 
+## new 关键字
+### 构造函数
+### new
+[new 命令](https://wangdoc.com/javascript/oop/new.html#new-%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8E%9F%E7%90%86)
+
 ## 回调函数
 [回调函数](https://blog.csdn.net/hu_belif/article/details/80284140)
+
+## JS常见错误类型
+[JS常见错误类型](https://www.jianshu.com/p/ef9f0b1f7382)
+
+## 严格模式
