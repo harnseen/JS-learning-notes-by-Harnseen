@@ -304,9 +304,12 @@ obj.method(fn, 1);
 [new 命令](https://wangdoc.com/javascript/oop/new.html#new-%E5%91%BD%E4%BB%A4%E7%9A%84%E5%8E%9F%E7%90%86)
 
 ## 回调函数
-[回调函数](https://blog.csdn.net/hu_belif/article/details/80284140)
+[回调函数](https://blog.csdn.net/hu_belif/article/details/80284140) <br>
+[同步回调，异步回调](https://blog.csdn.net/qq_31930499/article/details/80654472) <br>
+[回调地狱](https://blog.csdn.net/qq_21602341/article/details/87820778)
 
 ## JS常见错误类型
-[JS常见错误类型](https://www.jianshu.com/p/ef9f0b1f7382)
+[JS常见错误类型](https://www.jianshu.com/p/ef9f0b1f7382) <br>
+[Error MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
 ## 严格模式
