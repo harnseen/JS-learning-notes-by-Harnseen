@@ -285,6 +285,7 @@ obj.method(fn, 1);
 ## js 运行机制 -- 异步
 ![](./static/img/异步1.png)
 ![](./static/img/异步2.png)
+[*这一次，彻底弄懂 JavaScript 执行机制*](https://blog.csdn.net/weixin_33739646/article/details/87941549)
 
 ## 深拷贝、浅拷贝
 
