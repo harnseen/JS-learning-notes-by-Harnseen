@@ -5,6 +5,12 @@ let 可以重复赋值，const 不行 <br>
 对于 let 有“临时性死区” <br>
 只在块级作用域内有效
 
+## Symbol
+1. 创建 Symbol 类型数据时不能用 new 命令，因为 Symbol 是原始数据类型，不是对象
+2. Symbol 作为对象属性名时不能用.运算符，要用方括号
+3. Symbol 值作为属性名时，该属性是公有属性不是私有属性，可以在类的外部访问。但是不会出现在 for...in 、 for...of 的循环中，也不会被 Object.keys() 、 Object.getOwnPropertyNames() 返回。如果要读取到一个对象的 Symbol 属性，可以通过 Object.getOwnPropertySymbols() 和 Reflect.ownKeys() 取到
+4. Symbol.for( )，Symbol.keyFor( )
+
 ## 结构赋值
 ### [对象解构赋值](https://segmentfault.com/a/1190000013817091)
 
