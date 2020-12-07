@@ -365,7 +365,7 @@ console.log(arr.length); // 3
 **slice( ):**
 >从已有的数组中返回选定的元素，不会改变原数组 <br> 
 语法：slice(start, end), start 是必须的，end 是可选的 <br> 
-返回一个新的数组，包含从 start 到 end（不包括该元素）, 参数可为负数。
+返回一个新的数组，包含从 start 到 end（不包括end该元素）, 参数可为负数。
 
 **splice( ):**
 >添加/删除元素，会改变原数组 <br>
